@@ -36,13 +36,14 @@ class GenreViewSet(viewsets.ModelViewSet):
 
 class MovieViewSet(viewsets.ModelViewSet):
     queryset = Movie.objects.all()
-    
+
     def get_serializer_class(self):
         if self.action == "retrieve":
             return MovieRetriveSerializer
         elif self.action == "create":
             return MovieSerializer
         return MovieListSerializer
+
 
 class MovieSessionViewSet(viewsets.ModelViewSet):
     queryset = MovieSession.objects.all()

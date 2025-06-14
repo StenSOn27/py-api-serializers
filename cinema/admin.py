@@ -12,13 +12,13 @@ from .models import (
 
 
 class TicketInLine(admin.TabularInline):
-   model = Ticket
-   extra = 1
+    model = Ticket
+    extra = 1
 
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-   inlines = (TicketInLine,)
+    inlines = (TicketInLine,)
 
 
 admin.site.register(CinemaHall)
